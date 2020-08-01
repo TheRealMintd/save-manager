@@ -1,0 +1,45 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'save-manager'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=save-manager",
+					"--package=save-manager"
+				],
+				"filter": {
+					"name": "save-manager",
+					"kind": "bin"
+				}
+			},
+			"args": ["test"],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'save-manager'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=save-manager",
+					"--package=save-manager"
+				],
+				"filter": {
+					"name": "save-manager",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

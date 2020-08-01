@@ -1,0 +1,23 @@
+[package]
+name = "save-manager"
+version = "0.1.0"
+authors = ["Mintd <johnmax2468@gmail.com>"]
+edition = "2018"
+readme = "README.md"
+repository = ""
+description = "Manages Ironman save files for Crusader Kings II"
+license = "GPL-3.0-or-later"
+keywords = ["ironman", "paradox", "ck2"]
+categories = ["command-line-utilities"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cursive = { version = "0.15.0", default-features = false, features = ["crossterm-backend"] }
+notify = "4.0.15"
+rust-ini = "0.15.3"
+log = { version = "0.4.8", features = ["max_level_info", "release_max_level_info"] }
+
+[profile.release]
+opt-level = 'z'
+lto = true
